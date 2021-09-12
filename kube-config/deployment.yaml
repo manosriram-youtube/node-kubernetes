@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-kube-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: node-kube-deployment
+  template:
+    metadata:
+      labels:
+        app: node-kube-deployment
+    spec:
+      containers:
+        - name: node-kube-deployment
+          image: node-kubernetes
+          imagePullPolicy: Never
